@@ -20,7 +20,8 @@
         <dependency>
             <groupId>io.appium</groupId>
             <artifactId>java-client</artifactId>
-            <version>7.0.0</version>
+            <version>18</version>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
