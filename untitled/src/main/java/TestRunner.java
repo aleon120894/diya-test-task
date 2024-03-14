@@ -2,8 +2,10 @@ package tests;
 
 public class TestRunner {
     BaseOptions options = new BaseOptions()
-            .setPlatformName("myplatform")
-            .setAutomationName("mydriver")
+
+            .setPlatformName("AndroidApp")
+            .setAutomationName("appiumdriver")
+
             .amend("mycapability1", "capvalue1")
             .amend("mycapability2", "capvalue2");
     AppiumDriver driver = new AppiumDriver(
