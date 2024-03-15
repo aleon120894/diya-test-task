@@ -1,5 +1,7 @@
 package pages;
 
+import org.openqa.selenium.By;
+
 public class MainPage {
 
     AppiumDriver driver = new AppiumDriver(
@@ -29,24 +31,32 @@ public class MainPage {
     }
 
     public void setHello() {
-        hello = driver.findElement();
+        hello = driver.findElement(By.ByClassName("hello"));
     }
 
     public void setNews() {
-        news = driver.findElement();
+
+        news = driver.findElement(By.ByClassName("news"));
     }
 
     public void setQrCode() {
-        qrCode = driver.findElement();
+
+        qrCode = driver.findElement(By.ByClassName("qr"));
     }
 
     public void setDocuments() {
-        documents = driver.findElement();
+
+        documents = driver.findElement(By.ByClassName("documents"));
     }
 
 
     public void watchNews() {
+
         news.click();
+    }
+
+    public void watchDocuments() {
+        documents.click();
     }
 
 }
