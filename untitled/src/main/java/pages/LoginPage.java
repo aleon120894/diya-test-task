@@ -1,5 +1,7 @@
 package pages;
 
+import org.openqa.selenium.By;
+
 public class LoginPage {
 
     AppiumDriver driver = new AppiumDriver(
@@ -13,11 +15,13 @@ public class LoginPage {
     }
 
     public void setPasswordField() {
-        this.passwordField = driver.findElement();
+
+        this.passwordField = driver.findElement(By.ByClassName("password"));
     }
 
 
     public void autorize(String keys) {
+
         passwordField.sendKeys(keys);
     }
 }
