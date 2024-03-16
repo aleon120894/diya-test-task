@@ -13,6 +13,6 @@ public class DocumentsPage {
     }
 
     public void setDocument() {
-        document = driver.findElement(By.ByClassName("document"));
+        this.document = driver.findElement(By.ByClassName("document"));
     }
 }

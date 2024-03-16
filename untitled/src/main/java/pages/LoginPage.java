@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.springframework.util.Assert;
 
 public class LoginPage {
 
@@ -23,5 +24,6 @@ public class LoginPage {
     public void autorize(String keys) {
 
         passwordField.sendKeys(keys);
+        Assert.hasText(passwordField, keys);
     }
 }
