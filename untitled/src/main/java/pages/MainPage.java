@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.springframework.util.Assert;
 
 public class MainPage {
 
@@ -13,6 +14,8 @@ public class MainPage {
     private WebElement news;
     private WebElement qrCode;
     private WebElement documents;
+
+    private WebElement logOutButton;
 
     public WebElement getHello() {
         return hello;
@@ -30,33 +33,50 @@ public class MainPage {
         return documents;
     }
 
+    public WebElement getLogOutButton() {
+        return logOutButton;
+    }
+
     public void setHello() {
         hello = driver.findElement(By.ByClassName("hello"));
     }
 
     public void setNews() {
 
-        news = driver.findElement(By.ByClassName("news"));
+        this.news = driver.findElement(By.ByClassName("news"));
     }
 
     public void setQrCode() {
 
-        qrCode = driver.findElement(By.ByClassName("qr"));
+        this.qrCode = driver.findElement(By.ByClassName("qr"));
     }
 
     public void setDocuments() {
 
-        documents = driver.findElement(By.ByClassName("documents"));
+        this.documents = driver.findElement(By.ByClassName("documents"));
+    }
+
+    public void setLogOutButton() {
+        this.logOutButton = driver.findElement(By.ByClassName("logout"))
     }
 
 
     public void watchNews() {
 
         news.click();
+        Assert.hasText(documents, "documents");
     }
 
     public void watchDocuments() {
+
         documents.click();
+        Assert.hasText(documents, "Documents");
+    }
+
+    public void logOut() {
+
+        logOutButton.click();
+        Assert.hasText(logOutButton, "log in");
     }
 
 }
