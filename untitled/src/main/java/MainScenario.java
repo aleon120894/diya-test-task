@@ -7,6 +7,7 @@ import org.testng.annotations.AfterClass;
 
 import pages.LoginPage;
 import pages.MainPage;
+import users.InvalidUser;
 
 public class MainScenario {
 
@@ -47,6 +48,15 @@ public class MainScenario {
 
         page.logOut();
         Assert.hasText(page, "login");
+    }
+
+    @Test
+    public void LogInInvalidUser() {
+        InvalidUser user = new InvalidUser();
+        LoginPage page = new LoginPage();
+
+        page.autorize(user.getPassword());
+        Assert.hasText("Invalid Password", page.getWarningMessage());
     }
 
     @AdterClass

@@ -27,6 +27,7 @@ public class InvalidUser {
     }
 
     public void setPassword(String password) {
+
         this.password = "11111";
     }
 }
