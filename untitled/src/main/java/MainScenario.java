@@ -8,6 +8,7 @@ import org.testng.annotations.AfterClass;
 import pages.LoginPage;
 import pages.MainPage;
 import users.InvalidUser;
+import users.ValidUser;
 
 public class MainScenario {
 
@@ -15,7 +16,7 @@ public class MainScenario {
     public void setDriver() {
         BaseOptions options = new BaseOptions()
 
-                .setPlatformName("AndroidApp")
+                .setPlatformName("AndroidAppDiia")
                 .setAutomationName("appiumdriver")
 
                 .amend("mycapability1", "capvalue1")
@@ -30,7 +31,9 @@ public class MainScenario {
     public void logIn() {
 
         LoginPage page = new LoginPage();
-        page.autorize('0325');
+        ValidUser user = new ValidUser();
+
+        page.autorize(user.getPassword());
         Assert.assertEquals();
     }
 
@@ -51,12 +54,21 @@ public class MainScenario {
     }
 
     @Test
-    public void LogInInvalidUser() {
+    public void logInInvalidUser() {
         InvalidUser user = new InvalidUser();
         LoginPage page = new LoginPage();
 
         page.autorize(user.getPassword());
         Assert.hasText("Invalid Password", page.getWarningMessage());
+    }
+
+    @Test
+    public void logInWithBankId() {
+        ValidUser user = new ValidUser();
+        LoginPage page = new LoginPage();
+
+        page.autorizationWithBankId(user.getBankId());
+        Assert.hasText();
     }
 
     @AdterClass

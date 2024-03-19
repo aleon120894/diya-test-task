@@ -12,6 +12,7 @@ public class LoginPage {
 
     private WebElement passwordField;
     private WebElement warningMessage;
+    private WebElement bankIdField;
 
     public WebElement getPasswordField() {
 
@@ -19,7 +20,12 @@ public class LoginPage {
     }
 
     public WebElement getWarningMessage() {
+
         return this.warningMessage;
+    }
+
+    public WebElement getBankIdField() {
+        return this.bankIdField;
     }
 
     public void setPasswordField() {
@@ -28,13 +34,22 @@ public class LoginPage {
     }
 
     public void setWarningMessage() {
+
         this.warningMessage = driver.findElement(By.ByClassName("warning"))
     }
 
+    public void setBankIdField() {
+        this.bankIdField = driver.findElement(By.ByClassName("bank-id"))
+    }
 
     public void autorize(String keys) {
 
         passwordField.sendKeys(keys);
         Assert.hasText(passwordField, keys);
+    }
+
+    public void autorizationWithBankId(String bankId) {
+        bankIdField.sendKeys(bankId);
+        Assert.hasText(bankIdField, bankId);
     }
 }
