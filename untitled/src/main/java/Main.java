@@ -1,3 +1,5 @@
+import org.springframework.*;
+
 public class Main {
 
     MainScenario tests = new MainScenario();
@@ -6,5 +8,6 @@ public class Main {
 
         tests.logIn();
         tests.goToDocuments();
+        tests.logOut();
     }
 }

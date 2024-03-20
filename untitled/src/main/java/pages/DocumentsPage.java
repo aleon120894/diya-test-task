@@ -27,11 +27,11 @@ public class DocumentsPage {
         this.documents = driver.findElements(By.ByClassName("document[i]"));
     }
 
-    public void iterateDocuments() {
+    public void iterateDocuments(String documentName) {
 
-        for (WebElement d in documents) {
-            d.click();
-            Assert.hasText();
+        for (WebElement doc,  in documents) {
+            doc.click();
+            Assert.hasText(d, documentName);
         }
     }
 }

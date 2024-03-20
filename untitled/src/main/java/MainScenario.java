@@ -47,6 +47,7 @@ public class MainScenario {
 
     @Test
     public void logOut() {
+
         MainPage page = new MainPage();
 
         page.logOut();
@@ -55,6 +56,7 @@ public class MainScenario {
 
     @Test
     public void logInInvalidUser() {
+
         InvalidUser user = new InvalidUser();
         LoginPage page = new LoginPage();
 
@@ -64,11 +66,13 @@ public class MainScenario {
 
     @Test
     public void logInWithBankId() {
+
         ValidUser user = new ValidUser();
         LoginPage page = new LoginPage();
+        MainPage main = new MainPage();
 
         page.autorizationWithBankId(user.getBankId());
-        Assert.hasText();
+        Assert.hasText(main.getHello(), "Hello");
     }
 
     @AdterClass

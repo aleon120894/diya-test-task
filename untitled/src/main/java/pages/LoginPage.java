@@ -49,6 +49,7 @@ public class LoginPage {
     }
 
     public void autorizationWithBankId(String bankId) {
+
         bankIdField.sendKeys(bankId);
         Assert.hasText(bankIdField, bankId);
     }
