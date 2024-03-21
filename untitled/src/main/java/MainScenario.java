@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.AfterClass;
 
+import pages.DocumentsPage;
 import pages.LoginPage;
 import pages.MainPage;
 import users.InvalidUser;
@@ -43,6 +44,15 @@ public class MainScenario {
 
         page.watchDocuments();
         Assert.assertEquals();
+    }
+
+    @Test
+    public void iterateDocuments() {
+
+        DocumentsPage page = new DocumentsPage();
+
+        page.iterateDocuments();
+        Assert.hasText(page.getDocument(), "Document");
     }
 
     @Test

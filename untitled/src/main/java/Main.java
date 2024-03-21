@@ -1,4 +1,3 @@
-import org.springframework.*;
 
 public class Main {
 
@@ -8,6 +7,7 @@ public class Main {
 
         tests.logIn();
         tests.goToDocuments();
+        tests.iterateDocuments();
         tests.logOut();
     }
 }

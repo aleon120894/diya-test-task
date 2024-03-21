@@ -7,7 +7,6 @@ import org.springframework.util.Assert;
 public class LoginPage {
 
     AppiumDriver driver = new AppiumDriver(
-            // The default URL in Appium 1 is http://127.0.0.1:4723/wd/hub
             new URL("http://127.0.0.1:4723"));
 
     private WebElement passwordField;
@@ -35,11 +34,11 @@ public class LoginPage {
 
     public void setWarningMessage() {
 
-        this.warningMessage = driver.findElement(By.ByClassName("warning"))
+        this.warningMessage = driver.findElement(By.ByClassName("warning"));
     }
 
     public void setBankIdField() {
-        this.bankIdField = driver.findElement(By.ByClassName("bank-id"))
+        this.bankIdField = driver.findElement(By.ByClassName("bank-id"));
     }
 
     public void autorize(String keys) {
