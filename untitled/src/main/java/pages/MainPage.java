@@ -6,7 +6,6 @@ import org.springframework.util.Assert;
 public class MainPage {
 
     AppiumDriver driver = new AppiumDriver(
-            // The default URL in Appium 1 is http://127.0.0.1:4723/wd/hub
             new URL("http://127.0.0.1:4723"));
 
 
@@ -57,7 +56,7 @@ public class MainPage {
     }
 
     public void setLogOutButton() {
-        this.logOutButton = driver.findElement(By.ByClassName("logout"))
+        this.logOutButton = driver.findElement(By.ByClassName("logout"));
     }
 
 
