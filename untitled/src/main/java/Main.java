@@ -1,13 +1,11 @@
 
-public class Main {
+class Main {
 
-    MainScenario tests = new MainScenario();
+    MainScenario scenario = new MainScenario();
 
-    public void run() {
+    public static void main(String[] args) {
 
-        tests.logIn();
-        tests.goToDocuments();
-        tests.iterateDocuments();
-        tests.logOut();
+        scenario.setDriver();
     }
+
 }
