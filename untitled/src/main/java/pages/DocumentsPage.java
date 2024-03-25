@@ -29,9 +29,11 @@ public class DocumentsPage {
 
     public void iterateDocuments() {
 
-        for (WebElement doc;   documents;) {
-            doc.click();
-//            Assert.hasText(d, documentName);
+        WebElement documentName = driver.findElement(By.className("name"));
+
+        for (WebElement doc; documents;) {
+            doc.click(documentName, doc);
+            Assert.assertEquals();
         };
     }
 }
