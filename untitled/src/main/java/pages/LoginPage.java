@@ -43,12 +43,14 @@ public class LoginPage {
 
     public void autorize(String keys) {
 
+        Assert.hasText(warningMessage, "Log In");
         passwordField.sendKeys(keys);
         Assert.hasText(passwordField, keys);
     }
 
     public void autorizationWithBankId(String bankId) {
 
+        Assert.hasText(bankIdField, "Bank Id");
         bankIdField.sendKeys(bankId);
         Assert.hasText(bankIdField, bankId);
     }
