@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.springframework.util.Assert;
 
 public class MainPage {
@@ -74,8 +75,11 @@ public class MainPage {
 
     public void logOut() {
 
+        LoginPage loginPage = new LoginPage();
+        WebElement warning = loginPage.getWarningMessage();
+
         logOutButton.click();
-        Assert.hasText(logOutButton, "log in");
+        Assert.hasText(warning, "log in");
     }
 
 }
