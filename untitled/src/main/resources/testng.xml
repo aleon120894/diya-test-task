@@ -1,41 +1,27 @@
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-
-<!-- TestNG Documentation: http://testng.org/doc/documentation-main.html -->
-<!-- Change "false" to "tests", "methods", "classes" or "instances" for running in parallel. See more details in the TestNG documentation. -->
-<suite name="LeanFTSuite-corndog" parallel="false" verbose="2">
-    <test name="LeanFtTest-prontopuffl">
-
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!-- 1. -->
+<suite name="Mobile Suite" verbose="2">
+    <!-- 3. -->
+    <test name="Test Android App on LambdaTest">
+        <parameter name="environment" value="CLOUD"/>
+        <parameter name="deviceName" value="Galaxy S10"/>
+        <parameter name="version" value="10"/>
+        <parameter name="app" value="LT_APP_ANDROID"/>
+        <parameter name="isAutomatic" value="false"/>
         <classes>
-            <class name="net.mf.lft.examples.DataProviderExampleTest">
-                <methods> <!-- execute all methods (tests) in this class -->
-                    <!--include name="test"/-->
-                    <!-- <exclude name=".*MethodsToExclude.*"/> -->
-                </methods>
-            </class>
+            <class name="com.lambdatest.appium.sample.android.AndroidTest"/>
         </classes>
     </test>
-
-    <!--parameter name="param" value="value" /-->
-    <!--
-    <test name="Login Test cases 01" parallel="classes" thread-count="2">
-      <parameter name="Operating_System" value="Windows 8"/>
-      <parameter name="Browser_Name" value="Internet Explorer"/>
-      <parameter name="Browser_Version" value="11"/>
-      <parameter name="Base_URL" value="https://www.google.com"/>
-      <classes>
-        <class name="net.mf.lft.examples.Automation_01"/>
-        <class name="net.mf.lft.examples.Automation_02"/>
-      </classes>
+    <!-- 4. -->
+    <test name="Test Android App on Local">
+        <parameter name="environment" value="LOCAL"/>
+        <parameter name="deviceName" value="Pixel_5"/>
+        <parameter name="version" value="10"/>
+        <parameter name="app" value="/src/test/resources/apps/proverbial_android.apk"/>
+        <parameter name="isAutomatic" value="true"/>
+        <classes>
+            <class name="com.lambdatest.appium.sample.android.AndroidTest"/>
+        </classes>
     </test>
-    <test name="Login Test cases 02" parallel="classes" thread-count="2">
-      <parameter name="Operating_System" value="Windows XP"/>
-      <parameter name="Browser_Name" value="Mozilla Firefox"/>
-      <parameter name="Browser_Version" value="27"/>
-      <parameter name="Base_URL" value="https://www.google.com"/>
-      <classes>
-        <class name="net.mf.lft.examples.Automation_01"/>
-        <class name="net.mf.lft.examples.Automation_02"/>
-      </classes>
-    </test>
-    -->
 </suite>
