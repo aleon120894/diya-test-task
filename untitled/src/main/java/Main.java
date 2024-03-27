@@ -21,6 +21,7 @@ class Main {
             for (ITestListener itl : failureGenerators) {
                 testRunner.addListener(itl);
             }
+            
             return testRunner;
         }
     };
