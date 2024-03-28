@@ -58,12 +58,14 @@
                 </executions>
                 <configuration>
                     <useSystemClassLoader>false</useSystemClassLoader>
+
                     <properties>
                         <property>
                             <name>usedefaultlisteners</name>
                             <value>false</value>
                         </property>
                     </properties>
+
                     <suiteXmlFiles>
                         <suiteXmlFile>testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
