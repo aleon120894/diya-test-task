@@ -30,21 +30,24 @@ public class BaseTest<D extends AppiumDriver<MobileElement>> {
     protected static final String LT_USER = System.getenv ("LT_USERNAME");
 
     // 3.
-    protected D                        driver;
+    protected D driver;
     protected AppiumDriverLocalService service;
-    protected Swipe<D>                 swipe;
-    protected WebDriverWait            wait;
+    protected Swipe<D> swipe;
+    protected WebDriverWait wait;
 
     // 4.
     @AfterTest (alwaysRun = true)
     public void tearDown (final ITestContext context) {
+
         if (Environment.valueOf (context.getCurrentXmlTest ()
                 .getParameter ("environment")) == Environment.CLOUD) {
             final var status = (context.getFailedTests ()
                     .size () > 0) ? "failed" : "passed";
             this.driver.executeScript (format ("lambda-status={0}", status));
         }
+
         this.driver.quit ();
+
         if (this.service != null && this.service.isRunning ()) {
             this.service.stop ();
         }
@@ -73,12 +76,15 @@ public class BaseTest<D extends AppiumDriver<MobileElement>> {
 
     // 6.
     protected URL getUrl (final Environment environment) throws MalformedURLException {
+
         if (environment == Environment.CLOUD) {
             return new URL (format ("https://{0}:{1}@mobile-hub.lambdatest.com/wd/hub", LT_USER, LT_KEY));
         }
+
         if (this.service != null && this.service.isRunning ()) {
             return this.service.getUrl ();
         }
+
         return new URL ("http://localhost:4723/wd/hub");
     }
 
@@ -87,7 +93,9 @@ public class BaseTest<D extends AppiumDriver<MobileElement>> {
         if (!isAutomatic || environment == Environment.CLOUD) {
             return;
         }
+
         final AppiumServiceBuilder builder = new AppiumServiceBuilder ();
+
         builder.withIPAddress ("127.0.0.1")
                 .usingPort (4723)
                 .withAppiumJS (
@@ -95,6 +103,7 @@ public class BaseTest<D extends AppiumDriver<MobileElement>> {
                 .withLogFile (new File (System.getProperty ("user.dir") + "/logs/appium.log"))
                 .withArgument (GeneralServerFlag.LOG_LEVEL, "info")
                 .withArgument (GeneralServerFlag.SESSION_OVERRIDE);
+
         this.service = AppiumDriverLocalService.buildService (builder);
         this.service.start ();
     }

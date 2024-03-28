@@ -24,4 +24,5 @@
             <class name="com.lambdatest.appium.sample.android.AndroidTest"/>
         </classes>
     </test>
+
 </suite>

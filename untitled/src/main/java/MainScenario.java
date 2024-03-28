@@ -33,17 +33,19 @@ public class MainScenario {
 
         LoginPage page = new LoginPage();
         ValidUser user = new ValidUser();
+        MainPage main = new MainPage();
 
         page.autorize(user.getPassword());
-        Assert.assertEquals();
+        Assert.hasText(main.getDocuments(), "Documents");
     }
 
     @Test
     public void goToDocuments(){
         MainPage page = new MainPage();
+        DocumentsPage documents = new DocumentsPage();
 
         page.watchDocuments();
-        Assert.assertEquals();
+        Assert.hasText(documents.getDocument(), "Documents");
     }
 
     @Test
