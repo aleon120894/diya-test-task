@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<!-- 1. -->
+
 <suite name="Mobile Suite" verbose="2">
-    <!-- 3. -->
+
     <test name="Test Android App on LambdaTest">
         <parameter name="environment" value="CLOUD"/>
         <parameter name="deviceName" value="Galaxy S10"/>
@@ -13,7 +13,7 @@
             <class name="com.lambdatest.appium.sample.android.AndroidTest"/>
         </classes>
     </test>
-    <!-- 4. -->
+
     <test name="Test Android App on Local">
         <parameter name="environment" value="LOCAL"/>
         <parameter name="deviceName" value="Pixel_5"/>

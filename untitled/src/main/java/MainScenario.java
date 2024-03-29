@@ -41,6 +41,7 @@ public class MainScenario {
 
     @Test
     public void goToDocuments(){
+
         MainPage page = new MainPage();
         DocumentsPage documents = new DocumentsPage();
 
