@@ -23,6 +23,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterTest;
 
+
 // 1.
 public class BaseTest<D extends AppiumDriver<MobileElement>> {
     // 2.
@@ -122,6 +123,7 @@ public class BaseTest<D extends AppiumDriver<MobileElement>> {
     }
 
     private void setCapabilitiesForLocalAndroid (final DesiredCapabilities capabilities, final String deviceName) {
+
         capabilities.setCapability (AndroidMobileCapabilityType.AVD, deviceName);
         capabilities.setCapability (MobileCapabilityType.AUTOMATION_NAME, AutomationName.ANDROID_UIAUTOMATOR2);
     }

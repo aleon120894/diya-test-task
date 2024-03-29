@@ -32,8 +32,10 @@ public class DocumentsPage {
         WebElement documentName = driver.findElement(By.className("name"));
 
         for (WebElement doc; documents;) {
-            doc.click(documentName, doc);
-            Assert.assertEquals();
+
+            doc.click();
+            Assert.assertEquals(documentName, doc);
+            doc.swipe();
         };
     }
 }
