@@ -4,7 +4,9 @@ import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 import org.springframework.util.Assert;
 
-public class DocumentsPage {
+import utils;
+
+public class DocumentsPage(BasePage) {
     AppiumDriver driver = new AppiumDriver();
 
     private WebElement document;
