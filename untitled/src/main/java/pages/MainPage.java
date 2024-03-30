@@ -4,7 +4,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.springframework.util.Assert;
 
-public class MainPage {
+import utils;
+import utils.BasePage;
+
+public class MainPage(BasePage) {
 
     AppiumDriver driver = new AppiumDriver(
             new URL("http://127.0.0.1:4723"));
