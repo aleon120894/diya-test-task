@@ -41,6 +41,7 @@
             <version>6.14.3</version>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
 
     <build>
@@ -69,7 +70,7 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
-                    <argLine>${argLine}</argLine>
+
                 </configuration>
             </plugin>
         </plugins>

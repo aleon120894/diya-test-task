@@ -13,19 +13,17 @@ import users.ValidUser;
 
 public class MainScenario {
 
-    @BeforeClass
-    public void setDriver() {
-        BaseOptions options = new BaseOptions()
+    @BeforeTest
+    public void setUp() throws MalformedURLException {
 
-                .setPlatformName("AndroidAppDiia")
-                .setAutomationName("appiumdriver")
+        DesiredCapabilities caps = new DesiredCapabilities();
+        caps.setCapability("deviceName", "Android Emulator");
+        caps.setCapability("platformName", "Android");
+        caps.setCapability("appPackage", "your_app_package");
+        caps.setCapability("appActivity", "your_app_activity");
 
-                .amend("mycapability1", "capvalue1")
-                .amend("mycapability2", "capvalue2");
-
-        AppiumDriver driver = new AppiumDriver(
-                new URL("http://127.0.0.1:4723"), options
-        );
+        URL appiumServerURL = new URL("http://localhost:4723/wd/hub");
+        driver = new AndroidDriver<>(appiumServerURL, caps);
     }
 
     @Test
@@ -88,8 +86,11 @@ public class MainScenario {
         Assert.hasText(main.getHello(), "Hello");
     }
 
-    @AdterClass
-    public void quit() {
-        driver.quit();
+    @AfterTest
+    public void tearDown() {
+
+        if (driver != null) {
+            driver.quit();
+        }
     }
 }
