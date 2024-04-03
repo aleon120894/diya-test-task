@@ -1,17 +1,19 @@
 package pages;
 
-import io.appium.java_client.AppiumDriver;
-import org.openqa.selenium.By;
-import org.springframework.util.Assert;
-
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import io.appium.java_client.pagefactory.iOSFindBy;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
 
 public class DocumentsPage {
     AppiumDriver driver = new AppiumDriver();
 
-    private WebElement document;
-    private WebElements documents;
+    private MobileElement document;
+    private MobileElement documents;
 
-    public WebElement getDocument() {
+    public MobileElement getDocument() {
 
         return document;
     }
@@ -20,7 +22,7 @@ public class DocumentsPage {
         this.document = driver.findElement(By.ByClassName("document"));
     }
 
-    public WebElements getDocuments() {
+    public MobileElement getDocuments() {
         return documents;
     }
 
@@ -32,7 +34,7 @@ public class DocumentsPage {
 
         WebElement documentName = driver.findElement(By.className("name"));
 
-        for (WebElement doc; documents;) {
+        for (MobileElement doc; documents;) {
 
             doc.click();
             Assert.assertEquals(documentName, doc);

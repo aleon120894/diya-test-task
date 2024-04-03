@@ -1,88 +1,24 @@
-package pages;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.springframework.util.Assert;
-
-//import utils;
-import utils.BasePage;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import io.appium.java_client.pagefactory.iOSFindBy;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
 
 public class MainPage {
 
-    AppiumDriver driver = new AppiumDriver(
-            new URL("http://127.0.0.1:4723"));
-
-
-    private WebElement hello;
-    private WebElement news;
-    private WebElement qrCode;
-    private WebElement documents;
-
-    private WebElement logOutButton;
-
-    public WebElement getHello() {
-        return hello;
+    // Constructor
+    public MainPage(WebDriver driver) {
+        PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 
-    public WebElement getNews() {
-        return news;
-    }
+    // Element locators using @AndroidFindBy and @iOSFindBy annotations
+    @AndroidFindBy(id = "banner")
+    @iOSFindBy(xpath = "banner")
+    private MobileElement banner;
 
-    public WebElement getQrCode() {
-        return qrCode;
-    }
-
-    public WebElement getDocuments() {
-        return documents;
-    }
-
-    public WebElement getLogOutButton() {
-        return logOutButton;
-    }
-
-    public void setHello() {
-        hello = driver.findElement(By.ByClassName("hello"));
-    }
-
-    public void setNews() {
-
-        this.news = driver.findElement(By.ByClassName("news"));
-    }
-
-    public void setQrCode() {
-
-        this.qrCode = driver.findElement(By.ByClassName("qr"));
-    }
-
-    public void setDocuments() {
-
-        this.documents = driver.findElement(By.ByClassName("documents"));
-    }
-
-    public void setLogOutButton() {
-        this.logOutButton = driver.findElement(By.ByClassName("logout"));
-    }
-
-
-    public void watchNews() {
-
-        news.click();
-        Assert.hasText(documents, "documents");
-    }
-
-    public void watchDocuments() {
-
-        documents.click();
-        Assert.hasText(documents, "Documents");
-    }
-
-    public void logOut() {
-
-        LoginPage loginPage = new LoginPage();
-        WebElement warning = loginPage.getWarningMessage();
-
-        logOutButton.click();
-        Assert.hasText(warning, "log in");
-    }
-
+    @AndroidFindBy(id = "hello")
+    @iOSFindBy(xpath = "//XCUIElementTypeSecureTextField[@name='hello']")
+    private MobileElement hello;
 }
+
