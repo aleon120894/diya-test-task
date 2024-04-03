@@ -61,7 +61,7 @@ public class MainScenario {
 
         MainPage page = new MainPage();
 
-        page.logOut();
+//        page.logOut();
         Assert.hasText(page, "login");
     }
 

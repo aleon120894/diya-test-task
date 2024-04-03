@@ -1,60 +1,42 @@
 package pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.springframework.util.Assert;
-
-import utils.BasePage;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import io.appium.java_client.pagefactory.iOSFindBy;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
 
 
 public class LoginPage {
 
-    AppiumDriver driver = new AppiumDriver(
-            new URL("http://127.0.0.1:4723"));
-
-    private WebElement passwordField;
-    private WebElement warningMessage;
-    private WebElement bankIdField;
-
-    public WebElement getPasswordField() {
-
-        return this.passwordField;
+    public LoginPage(WebDriver driver) {
+        PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 
-    public WebElement getWarningMessage() {
+    // Element locators using @AndroidFindBy and @iOSFindBy annotations
+    @AndroidFindBy(id = "com.example.app:id/usernameField")
+    @iOSFindBy(xpath = "//XCUIElementTypeTextField[@name='username']")
+    private MobileElement usernameField;
 
-        return this.warningMessage;
+    @AndroidFindBy(id = "passwordField")
+    @iOSFindBy(xpath = "//XCUIElementTypeSecureTextField[@name='password']")
+    private MobileElement passwordField;
+
+    @AndroidFindBy(id = "com.example.app:id/loginButton")
+    @iOSFindBy(xpath = "//XCUIElementTypeButton[@name='Login']")
+    private MobileElement loginButton;
+
+    // Methods to interact with the elements
+    public void enterUsername(String username) {
+        usernameField.sendKeys(username);
     }
 
-    public WebElement getBankIdField() {
-        return this.bankIdField;
+    public void enterPassword(String password) {
+        passwordField.sendKeys(password);
     }
 
-    public void setPasswordField() {
-
-        this.passwordField = driver.findElement(By.ByClassName("password"));
-    }
-
-    public void setWarningMessage() {
-
-        this.warningMessage = driver.findElement(By.ByClassName("warning"));
-    }
-
-    public void setBankIdField() {
-        this.bankIdField = driver.findElement(By.ByClassName("bank-id"));
-    }
-
-    public void autorize(String keys) {
-
-        Assert.hasText(warningMessage, "Log In");
-        passwordField.sendKeys(keys);
-        Assert.hasText(passwordField, keys);
-    }
-
-    public void autorizationWithBankId(String bankId) {
-
-        Assert.hasText(bankIdField, "Bank Id");
-        bankIdField.sendKeys(bankId);
-        Assert.hasText(bankIdField, bankId);
+    public void clickLoginButton() {
+        loginButton.click();
     }
 }
