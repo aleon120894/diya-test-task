@@ -14,7 +14,6 @@ public class LoginPage {
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 
-    // Element locators using @AndroidFindBy and @iOSFindBy annotations
     @AndroidFindBy(id = "com.example.app:id/usernameField")
     @iOSFindBy(xpath = "//XCUIElementTypeTextField[@name='username']")
     private MobileElement usernameField;
@@ -28,15 +27,11 @@ public class LoginPage {
     private MobileElement loginButton;
 
     // Methods to interact with the elements
-    public void enterUsername(String username) {
-        usernameField.sendKeys(username);
-    }
 
-    public void enterPassword(String password) {
+    public void logIn(String login, String password) {
+
+        usernameField.sendKeys(login);
         passwordField.sendKeys(password);
-    }
-
-    public void clickLoginButton() {
         loginButton.click();
     }
 }

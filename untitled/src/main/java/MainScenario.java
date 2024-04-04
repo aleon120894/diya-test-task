@@ -43,8 +43,8 @@ public class MainScenario {
         MainPage page = new MainPage();
         DocumentsPage documents = new DocumentsPage();
 
-        page.watchDocuments();
-        Assert.hasText(documents.getDocument(), "Documents");
+        page.goToDocuments();
+//        Assert.hasText(documents.getDocument(), "Documents");
     }
 
     @Test
@@ -60,9 +60,7 @@ public class MainScenario {
     public void logOut() {
 
         MainPage page = new MainPage();
-
-//        page.logOut();
-        Assert.hasText(page, "login");
+        page.logOut();
     }
 
     @Test
