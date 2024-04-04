@@ -20,5 +20,21 @@ public class MainPage {
     @AndroidFindBy(id = "hello")
     @iOSFindBy(xpath = "//XCUIElementTypeSecureTextField[@name='hello']")
     private MobileElement hello;
+
+    @AndroidFindBy(id = "documents")
+    @iOSFindBy(xpath = "//XCUIElementTypeSecureTextField[@name='documents']")
+    private MobileElement documents;
+
+    @AndroidFindBy(id="logOut")
+    @iOSFindBy(xpath="//XCUIElementTypeSecureTextField[@name='logOut']")
+    private MobileElement logOutBtn;
+
+    public void goToDocuments() {
+        documents.click();
+    }
+
+    public void logOut() {
+        logOutBtn.click();
+    }
 }
 

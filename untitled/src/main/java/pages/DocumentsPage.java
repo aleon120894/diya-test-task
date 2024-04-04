@@ -8,37 +8,34 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 public class DocumentsPage {
-    AppiumDriver driver = new AppiumDriver();
 
-    private MobileElement document;
-    private MobileElement documents;
-
-    public MobileElement getDocument() {
-
-        return document;
+    public MobileElement LoginPage(WebDriver driver) {
+        PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 
-    public void setDocument() {
-        this.document = driver.findElement(By.ByClassName("document"));
+    @AndroidFindBy(id = "com.example.app:id/passport")
+    @iOSFindBy(xpath = "//XCUIElementTypeTextField[@name='passport']")
+    private MobileElement passport;
+
+    @AndroidFindBy(id = "foreignPassport")
+    @iOSFindBy(xpath = "//XCUIElementTypeSecureTextField[@name='foreignPassport']")
+    private MobileElement foreignPassport;
+
+    @AndroidFindBy(id = "com.example.app:id/certificate")
+    @iOSFindBy(xpath = "//XCUIElementTypeButton[@name='Certificate']")
+    private MobileElement certicficate;
+
+    // Methods to interact with the elements
+
+    public void checkPassport() {
+        //
     }
 
-    public MobileElement getDocuments() {
-        return documents;
+    public void checkForeignPassport() {
+        //
     }
 
-    public void setDocuments() {
-        this.documents = driver.findElements(By.ByClassName("document[i]"));
-    }
-
-    public void iterateDocuments() {
-
-        WebElement documentName = driver.findElement(By.className("name"));
-
-        for (MobileElement doc; documents;) {
-
-            doc.click();
-            Assert.assertEquals(documentName, doc);
-            doc.swipe();
-        };
+    public void checkCertificate() {
+        //
     }
 }
