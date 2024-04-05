@@ -33,8 +33,8 @@ public class MainScenario {
         ValidUser user = new ValidUser();
         MainPage main = new MainPage();
 
-        page.autorize(user.getPassword());
-        Assert.hasText(main.getDocuments(), "Documents");
+        page.logIn(user.getPassword());
+        Assert.hasText(main., "Documents");
     }
 
     @Test
