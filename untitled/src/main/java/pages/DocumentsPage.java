@@ -6,6 +6,7 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSFindBy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.springframework.util.Assert;
 
 public class DocumentsPage {
 
@@ -28,14 +29,17 @@ public class DocumentsPage {
     // Methods to interact with the elements
 
     public void checkPassport() {
-        //
+        passport.click();
+        Assert.hasText(passport.getText(), "Passport");
     }
 
     public void checkForeignPassport() {
-        //
+        foreignPassport.click();
+        Assert.hasText(foreignPassport.getText(), "Foreign Passport");
     }
 
     public void checkCertificate() {
-        //
+        certicficate.click();
+        Assert.hasText(certicficate.getText(), "Certificate");
     }
 }

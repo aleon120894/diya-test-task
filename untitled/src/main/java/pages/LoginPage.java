@@ -6,6 +6,7 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSFindBy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.springframework.util.Assert;
 
 
 public class LoginPage {
@@ -30,8 +31,12 @@ public class LoginPage {
 
     public void logIn(String login, String password) {
 
+        MainPage main = new MainPage();
+
         usernameField.sendKeys(login);
         passwordField.sendKeys(password);
         loginButton.click();
+
+        Assert.hasText(main.documents.getText, "Documents");
     }
 }

@@ -4,6 +4,8 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSFindBy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.springframework.util.Assert;
+import pages.DocumentsPage;
 
 public class MainPage {
 
@@ -30,7 +32,10 @@ public class MainPage {
     private MobileElement logOutBtn;
 
     public void goToDocuments() {
+
+        DocumentsPage documentsPage = new DocumentsPage();
         documents.click();
+        Assert.hasText(documentsPage.documents.getText, "Documents");
     }
 
     public void logOut() {
