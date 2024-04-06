@@ -27,7 +27,6 @@ public class LoginPage {
     @iOSFindBy(xpath = "//XCUIElementTypeButton[@name='Login']")
     private MobileElement loginButton;
 
-    // Methods to interact with the elements
 
     public void logIn(String login, String password) {
 
