@@ -9,12 +9,12 @@ import pages.DocumentsPage;
 
 public class MainPage {
 
-    // Constructor
+
     public MainPage(WebDriver driver) {
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 
-    // Element locators using @AndroidFindBy and @iOSFindBy annotations
+
     @AndroidFindBy(id = "banner")
     @iOSFindBy(xpath = "banner")
     private MobileElement banner;

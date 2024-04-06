@@ -26,7 +26,6 @@ public class DocumentsPage {
     @iOSFindBy(xpath = "//XCUIElementTypeButton[@name='Certificate']")
     private MobileElement certicficate;
 
-    // Methods to interact with the elements
 
     public void checkPassport() {
         passport.click();

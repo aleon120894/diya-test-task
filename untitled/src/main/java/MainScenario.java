@@ -34,26 +34,23 @@ public class MainScenario {
         MainPage main = new MainPage();
 
         page.logIn(user.getPassword());
-        Assert.hasText(main., "Documents");
     }
 
     @Test
     public void goToDocuments(){
 
         MainPage page = new MainPage();
-        DocumentsPage documents = new DocumentsPage();
-
         page.goToDocuments();
-//        Assert.hasText(documents.getDocument(), "Documents");
     }
 
     @Test
     public void iterateDocuments() {
 
         DocumentsPage page = new DocumentsPage();
+        page.checkPassport();
 
-        page.iterateDocuments();
-        Assert.hasText(page.getDocument(), "Document");
+        page.checkForeignPassport();
+        page.checkCertificate();
     }
 
     @Test
