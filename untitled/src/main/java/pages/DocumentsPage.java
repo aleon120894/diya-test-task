@@ -23,7 +23,7 @@ public class DocumentsPage {
     private MobileElement foreignPassport;
 
     @AndroidFindBy(id = "com.example.app:id/certificate")
-    @iOSFindBy(xpath = "//XCUIElementTypeButton[@name='Certificate']")
+    @iOSFindBy(xpath = "//XCUIElementTypeButton[@name='certificate']")
     private MobileElement certicficate;
 
 

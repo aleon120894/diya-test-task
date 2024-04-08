@@ -19,8 +19,8 @@ public class MainPage {
     @iOSFindBy(xpath = "banner")
     private MobileElement banner;
 
-    @AndroidFindBy(id = "hello")
-    @iOSFindBy(xpath = "//XCUIElementTypeSecureTextField[@name='hello']")
+    @AndroidFindBy(id = "hello_banner")
+    @iOSFindBy(xpath = "//XCUIElementTypeSecureTextField[@name='hello_banner']")
     private MobileElement hello;
 
     @AndroidFindBy(id = "documents")
