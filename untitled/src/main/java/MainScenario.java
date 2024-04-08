@@ -4,6 +4,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.AfterClass;
+import io.appium.*;
+import io.appium.java_client.DesiredCapabilities;
 
 import pages.DocumentsPage;
 import pages.LoginPage;

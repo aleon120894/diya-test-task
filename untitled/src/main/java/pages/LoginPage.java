@@ -24,14 +24,13 @@ public class LoginPage {
     private MobileElement passwordField;
 
     @AndroidFindBy(id = "com.example.app:id/loginButton")
-    @iOSFindBy(xpath = "//XCUIElementTypeButton[@name='Login']")
+    @iOSFindBy(xpath = "//XCUIElementTypeButton[@name='login']")
     private MobileElement loginButton;
 
 
     public void logIn(String login, String password) {
 
         MainPage main = new MainPage();
-
         usernameField.sendKeys(login);
         passwordField.sendKeys(password);
         loginButton.click();

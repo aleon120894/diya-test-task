@@ -16,7 +16,6 @@
         <parameter name="Browser_Name" value="Mozilla Firefox"/>
         <parameter name="Browser_Version" value="27"/>
         <parameter name="Base_URL" value="https://www.google.com"/>
-
         <classes>
             <class name="net.mf.lft.examples.Automation_01"/>
             <class name="net.mf.lft.examples.Automation_02"/>
