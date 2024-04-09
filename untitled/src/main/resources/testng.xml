@@ -12,6 +12,7 @@
             <class name="com.lambdatest.appium.sample.android.AndroidTest"/>
         </classes>
     </test>
+
     <test name="Test Android App on Local">
         <parameter name="environment" value="LOCAL"/>
         <parameter name="deviceName" value="Pixel_5"/>
