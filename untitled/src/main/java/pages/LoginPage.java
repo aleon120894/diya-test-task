@@ -7,6 +7,7 @@ import io.appium.java_client.pagefactory.iOSFindBy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.springframework.util.Assert;
+import org.testng.*;
 
 
 public class LoginPage {
