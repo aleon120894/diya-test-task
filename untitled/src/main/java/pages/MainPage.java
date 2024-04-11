@@ -4,8 +4,7 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSFindBy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-import org.springframework.util.Assert;
-import org.testng.*;
+import org.testng.Assert;
 import pages.DocumentsPage;
 
 public class MainPage {

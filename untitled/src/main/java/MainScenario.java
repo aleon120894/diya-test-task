@@ -1,5 +1,4 @@
 import com.google.common.annotations.VisibleForTesting;
-import org.springframework.util.Assert;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
@@ -10,7 +9,6 @@ import io.appium.java_client.AppiumDriver;
 
 import pages.DocumentsPage;
 import pages.LoginPage;
-import pages.MainPage;
 import users.InvalidUser;
 import users.ValidUser;
 
