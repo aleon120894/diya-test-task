@@ -8,6 +8,7 @@
         <parameter name="version" value="10"/>
         <parameter name="app" value="LT_APP_ANDROID"/>
         <parameter name="isAutomatic" value="false"/>
+
         <classes>
             <class name="com.lambdatest.appium.sample.android.AndroidTest"/>
         </classes>

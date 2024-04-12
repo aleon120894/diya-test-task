@@ -3,7 +3,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.AfterClass;
-import io.appium.*;
 import io.appium.java_client.DesiredCapabilities;
 import io.appium.java_client.AppiumDriver;
 
@@ -32,8 +31,8 @@ public class MainScenario {
 
         LoginPage page = new LoginPage();
         ValidUser user = new ValidUser();
-        MainPage main = new MainPage();
 
+        MainPage main = new MainPage();
         page.logIn(user.getPassword());
     }
 
