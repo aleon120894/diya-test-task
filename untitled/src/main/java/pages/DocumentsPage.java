@@ -10,9 +10,7 @@ import org.testng.Assert;
 
 public class DocumentsPage {
 
-    public MobileElement LoginPage(WebDriver driver) {
-        PageFactory.initElements(new AppiumFieldDecorator(driver), this);
-    }
+    public MobileElement LoginPage(WebDriver driver) {PageFactory.initElements(new AppiumFieldDecorator(driver), this); }
 
     @AndroidFindBy(id = "com.example.app:id/passport")
     @iOSFindBy(xpath = "//XCUIElementTypeTextField[@name='passport']")
