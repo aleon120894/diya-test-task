@@ -27,8 +27,8 @@ public class MainPage {
     @iOSFindBy(xpath = "//XCUIElementTypeSecureTextField[@name='documents']")
     private MobileElement documents;
 
-    @AndroidFindBy(id="logOut")
-    @iOSFindBy(xpath="//XCUIElementTypeSecureTextField[@name='logOut']")
+    @AndroidFindBy(id="log_out")
+    @iOSFindBy(xpath="//XCUIElementTypeSecureTextField[@name='log_out']")
     private MobileElement logOutBtn;
 
     public void goToDocuments() {

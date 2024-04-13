@@ -3,6 +3,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.AfterClass;
+import io.appium.java_client.URL;
 import io.appium.java_client.DesiredCapabilities;
 import io.appium.java_client.AppiumDriver;
 
@@ -19,8 +20,8 @@ public class MainScenario {
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("deviceName", "Android Emulator");
         caps.setCapability("platformName", "Android");
-        caps.setCapability("appPackage", "your_app_package");
-        caps.setCapability("appActivity", "your_app_activity");
+        caps.setCapability("appPackage", "package");
+        caps.setCapability("appActivity", "activity");
 
         URL appiumServerURL = new URL("http://localhost:4723/wd/hub");
         driver = new AndroidDriver<>(appiumServerURL, caps);
