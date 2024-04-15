@@ -15,7 +15,7 @@ public class LoginPage {
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 
-    @AndroidFindBy(id = "com.example.app:id/usernameField")
+    @AndroidFindBy(id = "com.example.app:id/username_field")
     @iOSFindBy(xpath = "//XCUIElementTypeTextField[@name='username']")
     private MobileElement usernameField;
 

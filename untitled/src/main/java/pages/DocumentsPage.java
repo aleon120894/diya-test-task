@@ -17,7 +17,7 @@ public class DocumentsPage {
     private MobileElement passport;
 
     @AndroidFindBy(id = "foreignPassport")
-    @iOSFindBy(xpath = "//XCUIElementTypeSecureTextField[@name='foreignPassport']")
+    @iOSFindBy(xpath = "//XCUIElementTypeSecureTextField[@name='foreign_passport']")
     private MobileElement foreignPassport;
 
     @AndroidFindBy(id = "com.example.app:id/certificate")
