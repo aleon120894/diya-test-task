@@ -56,7 +56,6 @@ public class MainScenario {
 
     @Test
     public void logOut() {
-
         MainPage page = new MainPage();
         page.logOut();
     }
