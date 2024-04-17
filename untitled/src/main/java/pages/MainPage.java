@@ -32,6 +32,7 @@ public class MainPage {
     private MobileElement logOutBtn;
 
     public void goToDocuments() {
+
         DocumentsPage documentsPage = new DocumentsPage();
         documents.click();
         Assert.hasText(documentsPage.documents.getText, "Documents");

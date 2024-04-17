@@ -23,7 +23,7 @@ public class LoginPage {
     @iOSFindBy(xpath = "//XCUIElementTypeSecureTextField[@name='password']")
     private MobileElement passwordField;
 
-    @AndroidFindBy(id = "com.example.app:id/loginButton")
+    @AndroidFindBy(id = "com.example.app:id/login_button")
     @iOSFindBy(xpath = "//XCUIElementTypeButton[@name='login']")
     private MobileElement loginButton;
 
