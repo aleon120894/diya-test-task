@@ -22,7 +22,7 @@ public class DocumentsPage {
 
     @AndroidFindBy(id = "com.example.app:id/certificate")
     @iOSFindBy(xpath = "//XCUIElementTypeButton[@name='certificate']")
-    private MobileElement certicficate;
+    private MobileElement certificate;
 
 
     public void checkPassport() {
