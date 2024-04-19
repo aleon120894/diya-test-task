@@ -20,6 +20,7 @@
         <parameter name="version" value="10"/>
         <parameter name="app" value="/src/test/resources/apps/proverbial_android.apk"/>
         <parameter name="isAutomatic" value="true"/>
+
         <classes>
             <class name="com.lambdatest.appium.sample.android.AndroidTest"/>
         </classes>

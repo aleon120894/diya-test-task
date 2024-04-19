@@ -12,15 +12,15 @@ public class DocumentsPage {
 
     public MobileElement LoginPage(WebDriver driver) {PageFactory.initElements(new AppiumFieldDecorator(driver), this); }
 
-    @AndroidFindBy(id = "com.example.app:id/passport")
+    @AndroidFindBy(id = "passport")
     @iOSFindBy(xpath = "//XCUIElementTypeTextField[@name='passport']")
     private MobileElement passport;
 
-    @AndroidFindBy(id = "foreignPassport")
+    @AndroidFindBy(id = "foreign_passport")
     @iOSFindBy(xpath = "//XCUIElementTypeSecureTextField[@name='foreign_passport']")
     private MobileElement foreignPassport;
 
-    @AndroidFindBy(id = "com.example.app:id/certificate")
+    @AndroidFindBy(id = "certificate")
     @iOSFindBy(xpath = "//XCUIElementTypeButton[@name='certificate']")
     private MobileElement certificate;
 

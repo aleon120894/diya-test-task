@@ -82,7 +82,6 @@ public class MainScenario {
 
     @AfterTest
     public void tearDown() {
-
         if (driver != null) {
             driver.quit();
         }
