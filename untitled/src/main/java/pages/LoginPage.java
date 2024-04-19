@@ -15,15 +15,15 @@ public class LoginPage {
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 
-    @AndroidFindBy(id = "com.example.app:id/username_field")
+    @AndroidFindBy(id = "username_field")
     @iOSFindBy(xpath = "//XCUIElementTypeTextField[@name='username']")
     private MobileElement usernameField;
 
-    @AndroidFindBy(id = "passwordField")
+    @AndroidFindBy(id = "password_field")
     @iOSFindBy(xpath = "//XCUIElementTypeSecureTextField[@name='password']")
     private MobileElement passwordField;
 
-    @AndroidFindBy(id = "com.example.app:id/login_button")
+    @AndroidFindBy(id = "login")
     @iOSFindBy(xpath = "//XCUIElementTypeButton[@name='login']")
     private MobileElement loginButton;
 
