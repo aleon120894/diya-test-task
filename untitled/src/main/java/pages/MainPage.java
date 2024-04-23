@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import pages.DocumentsPage;
+import pages.ServicesPage;
 
 public class MainPage {
 
@@ -27,6 +28,10 @@ public class MainPage {
     @iOSFindBy(xpath = "//XCUIElementTypeSecureTextField[@name='documents']")
     private MobileElement documents;
 
+    @AndroidFindBy(id = "services")
+    @iOSFindBy(xpath = "//XCUIElementTypeSecureTextField[@name='services']")
+    private MobileElement services;
+
     @AndroidFindBy(id="log_out")
     @iOSFindBy(xpath="//XCUIElementTypeSecureTextField[@name='log_out']")
     private MobileElement logOutBtn;
@@ -35,6 +40,12 @@ public class MainPage {
         DocumentsPage documentsPage = new DocumentsPage();
         documents.click();
         Assert.hasText(documentsPage.documents.getText, "Documents");
+    }
+
+    public void goToServices() {
+        ServicesPage page = new ServicesPage();
+        services.click();
+        page.checkBanner("Services");
     }
 
     public void logOut() {

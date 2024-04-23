@@ -6,6 +6,7 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSFindBy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.springframework.util.Assert;
 import org.testng.Assert;
 
 public class DocumentsPage {
@@ -24,6 +25,10 @@ public class DocumentsPage {
     @iOSFindBy(xpath = "//XCUIElementTypeButton[@name='certificate']")
     private MobileElement certificate;
 
+    @AndroidFindBy(id = "tax_number")
+    @iOSFindBy(xpath = "//XCUIElementTypeButton[@name='tax_number']")
+    private MobileElement taxNumber;
+
 
     public void checkPassport() {
         passport.click();
@@ -38,5 +43,10 @@ public class DocumentsPage {
     public void checkCertificate() {
         certicficate.click();
         Assert.hasText(certicficate.getText(), "Certificate");
+    }
+
+    public void CheckTaxNumber() {
+        taxNumber.click();
+        Assert.hasText(taxNumber.getText(), "Tax Number");
     }
 }
