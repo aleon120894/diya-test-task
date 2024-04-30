@@ -16,6 +16,18 @@ public class ServicesPage {
     @iOSFindBy(xpath = "//XCUIElementTypeTextField[@name='banner']")
     private MobileElement banner;
 
+    @AndroidFindBy(id = "army_help")
+    @iOSFindBy(xpath = "//XCUIElementTypeTextField[@name='army_help']")
+    private MobileElement armyHelp;
+
+    @AndroidFindBy(id = 'mil_obligations')
+    @iOSFindBy(xpath = "//XCUIElementTypeTextField[@name='mil_obligations']")
+    private MobileElement militaryObligationds;
+
+    @AndroidFindBy(id = "for_friver")
+    @iOSFindBy(xpath = "//XCUIElementTypeTextField[@name='for_driver']")
+    private MobileElement forDriver;
+
     public void checkBanner(String bannerName) {
         banner.click();
         Assert.hasText(banner, bannerName);

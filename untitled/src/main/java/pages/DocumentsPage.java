@@ -32,21 +32,21 @@ public class DocumentsPage {
 
     public void checkPassport() {
         passport.click();
-        Assert.hasText(passport.getText(), "Passport");
+        Assert.hasText(passport.getText(), "PASSPORT");
     }
 
     public void checkForeignPassport() {
         foreignPassport.click();
-        Assert.hasText(foreignPassport.getText(), "Foreign Passport");
+        Assert.hasText(foreignPassport.getText(), "FOREIGN PASSPORT");
     }
 
     public void checkCertificate() {
         certicficate.click();
-        Assert.hasText(certicficate.getText(), "Certificate");
+        Assert.hasText(certicficate.getText(), "CERTIFICATE");
     }
 
     public void CheckTaxNumber() {
         taxNumber.click();
-        Assert.hasText(taxNumber.getText(), "Tax Number");
+        Assert.hasText(taxNumber.getText(), "ID TAX NUMBER");
     }
 }

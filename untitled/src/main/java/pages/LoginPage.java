@@ -35,6 +35,6 @@ public class LoginPage {
         passwordField.sendKeys(password);
 
         loginButton.click();
-        Assert.hasText(main.documents.getText, "Documents");
+        Assert.hasText(main.documents.getText, "DOCUMENTS");
     }
 }
