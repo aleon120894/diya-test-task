@@ -39,13 +39,13 @@ public class MainPage {
     public void goToDocuments() {
         DocumentsPage documentsPage = new DocumentsPage();
         documents.click();
-        Assert.hasText(documentsPage.documents.getText, "Documents");
+        Assert.hasText(documentsPage.documents.getText, "DOCUMENTS");
     }
 
     public void goToServices() {
         ServicesPage page = new ServicesPage();
         services.click();
-        page.checkBanner("Services");
+        page.checkBanner("SERVICES");
     }
 
     public void logOut() {
