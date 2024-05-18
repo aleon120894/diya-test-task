@@ -10,7 +10,9 @@ import org.springframework.util.Assert;
 
 public class ServicesPage {
 
-    public ServicesPage(WebDriver driver) { PageFactory.initElements(new AppiumFieldDecorator(driver), this); }
+    public ServicesPage(WebDriver driver) {
+        PageFactory.initElements(new AppiumFieldDecorator(driver), this);
+    }
 
     @AndroidFindBy(id = "banner")
     @iOSFindBy(xpath = "//XCUIElementTypeTextField[@name='banner']")
@@ -20,11 +22,11 @@ public class ServicesPage {
     @iOSFindBy(xpath = "//XCUIElementTypeTextField[@name='army_help']")
     private MobileElement armyHelp;
 
-    @AndroidFindBy(id = 'mil_obligations')
+    @AndroidFindBy(id = "mil_obligations")
     @iOSFindBy(xpath = "//XCUIElementTypeTextField[@name='mil_obligations']")
-    private MobileElement militaryObligationds;
+    private MobileElement militaryObligations; // Fixed typo
 
-    @AndroidFindBy(id = "for_friver")
+    @AndroidFindBy(id = "for_driver")
     @iOSFindBy(xpath = "//XCUIElementTypeTextField[@name='for_driver']")
     private MobileElement forDriver;
 
@@ -33,3 +35,4 @@ public class ServicesPage {
         Assert.hasText(banner, bannerName);
     }
 }
+

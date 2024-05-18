@@ -1,27 +1,15 @@
-# Use the official Maven image to build the app
-FROM maven:3.8.1-openjdk-11 AS build
+# Use an OpenJDK image
+FROM maven:3.8.1-openjdk-11
 
-# Set the working directory in the container
+# Set the working directory
 WORKDIR /app
 
-# Copy the pom.xml file and the source code to the container
-COPY pom.xml .
-COPY src ./src
+# Copy the pom.xml file and the source code
+COPY pom.xml /app
+COPY src /app/src
 
-# Run Maven to build the app
+# Run Maven to build the project
 RUN mvn clean package -DskipTests
 
-# Use the official OpenJDK image to run the app
-FROM openjdk:11-jre-slim
-
-# Set the working directory in the container
-WORKDIR /app
-
-# Copy the JAR file from the build stage
-COPY --from=build /app/target/*.jar app.jar
-
-# Expose the port the app runs on (adjust if necessary)
-EXPOSE 8080
-
-# Run the app
-ENTRYPOINT ["java", "-jar", "app.jar"]
+# Specify the command to run the application
+CMD ["java", "-jar", "target/your-app.jar"]
