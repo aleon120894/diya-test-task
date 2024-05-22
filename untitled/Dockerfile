@@ -1,15 +1,17 @@
-# Use an OpenJDK image
-FROM maven:3.8.1-openjdk-11
+# Use an appropriate base image
+FROM maven:3.8.1-openjdk-8
 
-# Set the working directory
+# Set working directory
 WORKDIR /app
 
-# Copy the pom.xml file and the source code
-COPY pom.xml /app
-COPY src /app/src
+# Copy pom.xml and source code
+COPY pom.xml .
+RUN mvn dependency:go-offline
 
-# Run Maven to build the project
+COPY src ./src
+
+# Run Maven package command
 RUN mvn clean package -DskipTests
 
-# Specify the command to run the application
-CMD ["java", "-jar", "target/your-app.jar"]
+# Command to run the application or tests
+CMD ["mvn", "test"]
