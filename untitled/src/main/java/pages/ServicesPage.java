@@ -6,7 +6,7 @@ import io.appium.java_client.pagefactory.iOSFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-import org.springframework.util.Assert;
+import org.testng.Assert;
 
 public class ServicesPage {
 
@@ -32,7 +32,7 @@ public class ServicesPage {
 
     public void checkBanner(String bannerName) {
         banner.click();
-        Assert.hasText(banner, bannerName);
+        Assert.assertEquals(banner.getText(), bannerName);
     }
 }
 

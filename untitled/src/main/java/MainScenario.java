@@ -1,11 +1,12 @@
-import com.google.common.annotations.VisibleForTesting;
-import org.testng.Assert;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.remote.MobileCapabilityType;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.AfterClass;
-import io.appium.java_client.URL;
-import io.appium.java_client.DesiredCapabilities;
-import io.appium.java_client.AppiumDriver;
+import org.testng.annotations.AfterTest;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import pages.DocumentsPage;
 import pages.LoginPage;
@@ -13,6 +14,8 @@ import users.InvalidUser;
 import users.ValidUser;
 
 public class MainScenario {
+
+    WebDriver driver;
 
     @BeforeTest
     public void setUp() throws MalformedURLException {
